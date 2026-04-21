@@ -1,0 +1,16 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(gh auth *)",
+      "Bash(git --version)",
+      "Bash(/usr/local/bin/gh --version)",
+      "Bash(/opt/homebrew/bin/gh --version)",
+      "Read(//usr/local/**)",
+      "Bash(grep -v \".1$\")",
+      "Bash(xargs -I{} find {} -name \"gh\" -type f)",
+      "Bash(sudo cp *)",
+      "Bash(gh --version)",
+      "Bash(gh repo *)"
+    ]
+  }
+}

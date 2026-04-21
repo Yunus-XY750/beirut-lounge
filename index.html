@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Beirut Lounge — Shisha Bar Herzogenrath</title>
+  <meta name="description" content="Beirut Lounge — Deine Shisha Bar in Herzogenrath. Orientalische Atmosphäre, über 30 Shisha-Sorten. Ab 19:00 Uhr geöffnet.">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Beirut Lounge — Shisha Bar Herzogenrath">
+  <meta property="og:description" content="Orientalische Atmosphäre, Premium Shisha, kalte Getränke. Kleikstraße 24, Herzogenrath.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="assets/images/hero-bg.jpg">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="assets/css/main.css">
+</head>
+<body>
+
+  <!-- ─── NAVIGATION ─── -->
+  <nav class="nav" aria-label="Hauptnavigation">
+    <a href="#" class="nav__logo" aria-label="Beirut Lounge – Startseite">Beirut Lounge</a>
+
+    <ul class="nav__links" role="list">
+      <li><a href="#atmosphaere">Atmosphäre</a></li>
+      <li><a href="#menu-preview">Menü</a></li>
+      <li><a href="#galerie">Galerie</a></li>
+      <li><a href="#kontakt">Kontakt</a></li>
+    </ul>
+
+    <button class="nav__hamburger" aria-label="Menü öffnen" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </nav>
+
+  <!-- Mobile overlay -->
+  <div class="nav__overlay" role="dialog" aria-modal="true" aria-label="Navigation">
+    <a href="#atmosphaere">Atmosphäre</a>
+    <a href="#menu-preview">Menü</a>
+    <a href="#galerie">Galerie</a>
+    <a href="#kontakt">Kontakt</a>
+  </div>
+
+  <main>
+
+    <!-- ─── HERO ─── -->
+    <section id="hero" class="hero" aria-label="Willkommen">
+      <div class="hero__bg" role="img" aria-label="Atmosphärisches Foto der Beirut Lounge"></div>
+      <div class="hero__overlay"></div>
+
+      <div class="hero__content">
+        <span class="hero__label">Shisha Bar &middot; Herzogenrath</span>
+        <h1 class="hero__title">Beirut<br>Lounge</h1>
+        <p class="hero__tagline">Ein Ort zum Verweilen.</p>
+        <a href="menu.html" class="btn-ghost">Zur Speisekarte</a>
+      </div>
+
+      <div class="hero__scroll" aria-hidden="true"></div>
+    </section>
+
+    <!-- ─── ATMOSPHÄRE ─── -->
+    <section id="atmosphaere" aria-labelledby="atm-heading">
+      <div class="atmosphaere">
+        <span class="section-label reveal">Über uns</span>
+        <h2 class="section-title reveal" id="atm-heading">
+          Ein Hauch des Orients<br>
+          <span style="font-weight:300; color: var(--text-secondary);">mitten in Herzogenrath</span>
+        </h2>
+        <div class="gold-rule reveal"></div>
+        <p class="atmosphaere__text reveal">
+          Willkommen im Beirut Lounge — wo orientalische Gastfreundschaft auf entspanntes Beisammensein trifft.
+          Genieße erstklassige Shisha in über 30 Sorten, eisgekühlte Getränke und eine Atmosphäre,
+          die dich vergessen lässt, wo die Zeit geblieben ist.
+        </p>
+
+        <div class="pillars">
+          <div class="pillar reveal">
+            <p class="pillar__title">Shisha</p>
+            <p class="pillar__value">Über 30 Sorten</p>
+          </div>
+          <div class="pillar reveal">
+            <p class="pillar__title">Öffnungszeiten</p>
+            <p class="pillar__value">Ab 19:00 Uhr</p>
+          </div>
+          <div class="pillar reveal">
+            <p class="pillar__title">Adresse</p>
+            <p class="pillar__value">Kleikstraße 24</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── MENU PREVIEW ─── -->
+    <section id="menu-preview" class="menu-preview" aria-labelledby="menu-heading">
+      <span class="section-label reveal">Unsere Karte</span>
+      <h2 class="section-title reveal" id="menu-heading">Shisha. Getränke. Genuss.</h2>
+
+      <div class="menu-preview__pills reveal" aria-label="Kategorien">
+        <span class="pill">Shisha</span>
+        <span class="pill">Softgetränke</span>
+        <span class="pill">Shakes &amp; Smoothies</span>
+        <span class="pill">Snacks</span>
+      </div>
+
+      <p class="menu-preview__sub reveal">
+        Scanne den QR-Code an deinem Tisch oder öffne unsere digitale Speisekarte.
+      </p>
+
+      <a href="menu.html" class="btn-gold reveal">Speisekarte öffnen &rarr;</a>
+
+      <div class="menu-preview__qr reveal" aria-label="QR-Code zur Speisekarte">
+        <img src="qr/menu-qr.png" alt="QR-Code zur Speisekarte" width="96" height="96">
+        <span>Oder scanne hier</span>
+      </div>
+    </section>
+
+    <!-- ─── GALERIE ─── -->
+    <section id="galerie" class="galerie" aria-labelledby="gal-heading">
+      <span class="section-label reveal">Galerie</span>
+      <h2 class="section-title reveal" id="gal-heading">Atmosphäre erleben</h2>
+
+      <div class="gallery-grid reveal">
+        <div class="gallery-item">
+          <img src="assets/images/gallery-1.jpg" alt="Innenbereich der Beirut Lounge" loading="lazy">
+        </div>
+        <div class="gallery-item">
+          <img src="assets/images/gallery-2.jpg" alt="Shisha Zubereitung" loading="lazy">
+        </div>
+        <div class="gallery-item">
+          <img src="assets/images/gallery-3.jpg" alt="Loungebereich" loading="lazy">
+        </div>
+        <div class="gallery-item">
+          <img src="assets/images/gallery-4.jpg" alt="Beleuchtung und Ambiente" loading="lazy">
+        </div>
+        <div class="gallery-item">
+          <img src="assets/images/gallery-5.jpg" alt="Sitzbereich" loading="lazy">
+        </div>
+        <div class="gallery-item">
+          <img src="assets/images/gallery-6.jpg" alt="Außenbereich" loading="lazy">
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── KONTAKT ─── -->
+    <section id="kontakt" class="kontakt" aria-labelledby="kontakt-heading">
+      <span class="section-label reveal">Kontakt</span>
+      <h2 class="section-title reveal" id="kontakt-heading">Besuche uns</h2>
+
+      <div class="kontakt__inner">
+
+        <div class="kontakt__info">
+
+          <div class="reveal">
+            <p class="kontakt__block-label">Adresse</p>
+            <p class="kontakt__block-value">
+              Kleikstraße 24<br>
+              52134 Herzogenrath
+            </p>
+          </div>
+
+          <div class="reveal">
+            <p class="kontakt__block-label">Telefon</p>
+            <p class="kontakt__block-value">
+              <a href="tel:+4915758843854">01575 5843854</a>
+            </p>
+          </div>
+
+          <div class="reveal">
+            <p class="kontakt__block-label">Öffnungszeiten</p>
+            <table class="kontakt__hours-table" aria-label="Öffnungszeiten">
+              <tbody>
+                <tr><td>Montag – Donnerstag</td><td>19:00 – 01:00 Uhr</td></tr>
+                <tr><td>Freitag – Samstag</td><td>19:00 – 02:00 Uhr</td></tr>
+                <tr><td>Sonntag</td><td>19:00 – 01:00 Uhr</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="reveal">
+            <p class="kontakt__block-label">Bewertung</p>
+            <p class="kontakt__block-value">
+              <span class="rating-badge">
+                <span class="stars">★★★★★</span>
+                <span>4,7</span>
+                <a href="https://maps.google.com/?q=Beirut+Lounge+Herzogenrath" target="_blank" rel="noopener noreferrer"
+                   style="font-size: var(--text-xs); letter-spacing: 0.08em;">
+                  87 Rezensionen auf Google
+                </a>
+              </span>
+            </p>
+          </div>
+
+        </div>
+
+        <div class="kontakt__map-wrapper reveal" aria-label="Google Maps Karte">
+          <iframe
+            src="https://maps.google.com/maps?q=Kleikstra%C3%9Fe+24,+52134+Herzogenrath&output=embed&z=16"
+            title="Beirut Lounge auf Google Maps"
+            allowfullscreen
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ─── FOOTER ─── -->
+  <footer>
+    <p class="footer__logo">Beirut Lounge</p>
+    <p class="footer__address">Kleikstraße 24, 52134 Herzogenrath</p>
+    <ul class="footer__links">
+      <li><a href="impressum.html">Impressum</a></li>
+      <li><a href="datenschutz.html">Datenschutz</a></li>
+    </ul>
+    <p class="footer__copy">&copy; 2025 Beirut Lounge. Alle Rechte vorbehalten.</p>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

@@ -48,8 +48,12 @@
     }
     .legal-header__back:hover { color: var(--accent); text-decoration: none; }
     .legal-header__logo {
-      height: 36px;
-      width: auto;
+      font-family: var(--font-display);
+      font-size: 1.125rem;
+      font-weight: 300;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--accent);
     }
 
     .legal-main {
@@ -100,7 +104,7 @@
 
   <header class="legal-header">
     <a href="index.html" class="legal-header__back">&#8592; Zurück</a>
-    <img src="assets/images/Logo.svg" alt="Beirut Lounge" class="legal-header__logo">
+    <span class="legal-header__logo">Beirut Lounge</span>
   </header>
 
   <main class="legal-main">

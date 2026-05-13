@@ -122,35 +122,31 @@
       <span class="section-label reveal">Galerie</span>
       <h2 class="section-title reveal" id="gal-heading">Atmosphäre erleben</h2>
 
-      <div class="gallery-slider reveal">
-        <button class="gallery-btn gallery-btn--prev" aria-label="Vorheriges Bild">&#8592;</button>
-        <div class="gallery-track-wrapper">
-          <div class="gallery-track">
-            <div class="gallery-item" data-src="assets/images/gallery-1.jpg">
-              <img src="assets/images/gallery-1.jpg" alt="Innenbereich der Beirut Lounge" loading="lazy">
-            </div>
-            <div class="gallery-item" data-src="assets/images/gallery-2.jpg">
-              <img src="assets/images/gallery-2.jpg" alt="Shisha Zubereitung" loading="lazy">
-            </div>
-            <div class="gallery-item" data-src="assets/images/gallery-3.jpg">
-              <img src="assets/images/gallery-3.jpg" alt="Loungebereich" loading="lazy">
-            </div>
-            <div class="gallery-item" data-src="assets/images/gallery-4.jpg">
-              <img src="assets/images/gallery-4.jpg" alt="Beleuchtung und Ambiente" loading="lazy">
-            </div>
-            <div class="gallery-item" data-src="assets/images/gallery-5.jpg">
-              <img src="assets/images/gallery-5.jpg" alt="Sitzbereich" loading="lazy">
-            </div>
-          </div>
+      <div class="gallery-grid reveal">
+        <div class="gallery-item" data-index="0" data-src="assets/images/gallery-1.jpg">
+          <img src="assets/images/gallery-1.jpg" alt="Innenbereich der Beirut Lounge" loading="lazy">
         </div>
-        <button class="gallery-btn gallery-btn--next" aria-label="Nächstes Bild">&#8594;</button>
+        <div class="gallery-item" data-index="1" data-src="assets/images/gallery-2.jpg">
+          <img src="assets/images/gallery-2.jpg" alt="Shisha Zubereitung" loading="lazy">
+        </div>
+        <div class="gallery-item" data-index="2" data-src="assets/images/gallery-3.jpg">
+          <img src="assets/images/gallery-3.jpg" alt="Loungebereich" loading="lazy">
+        </div>
+        <div class="gallery-item" data-index="3" data-src="assets/images/gallery-4.jpg">
+          <img src="assets/images/gallery-4.jpg" alt="Beleuchtung und Ambiente" loading="lazy">
+        </div>
+        <div class="gallery-item" data-index="4" data-src="assets/images/gallery-5.jpg">
+          <img src="assets/images/gallery-5.jpg" alt="Sitzbereich" loading="lazy">
+        </div>
       </div>
     </section>
 
     <!-- ─── LIGHTBOX ─── -->
     <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Bild in voller Größe">
       <button class="lightbox__close" aria-label="Schließen">&times;</button>
+      <button class="lightbox__prev" aria-label="Vorheriges Bild">&#8592;</button>
       <img class="lightbox__img" src="" alt="">
+      <button class="lightbox__next" aria-label="Nächstes Bild">&#8594;</button>
     </div>
 
     <!-- ─── KONTAKT ─── -->

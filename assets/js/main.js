@@ -41,46 +41,22 @@
   });
 
 
-  // ─── Galerie Slider ───
-  const track    = document.querySelector('.gallery-track');
-  const items    = track ? Array.from(track.querySelectorAll('.gallery-item')) : [];
-  const btnPrev  = document.querySelector('.gallery-btn--prev');
-  const btnNext  = document.querySelector('.gallery-btn--next');
-  let current    = 0;
-
-  function goTo(index) {
-    current = (index + items.length) % items.length;
-    track.style.transform = 'translateX(-' + (current * 100) + '%)';
-  }
-
-  if (btnPrev) btnPrev.addEventListener('click', function () { goTo(current - 1); });
-  if (btnNext) btnNext.addEventListener('click', function () { goTo(current + 1); });
-
-  // Touch / Swipe
-  if (track) {
-    let startX = 0;
-    track.addEventListener('touchstart', function (e) {
-      startX = e.touches[0].clientX;
-    }, { passive: true });
-    track.addEventListener('touchend', function (e) {
-      const diff = startX - e.changedTouches[0].clientX;
-      if (Math.abs(diff) > 50) goTo(diff > 0 ? current + 1 : current - 1);
-    }, { passive: true });
-  }
-
-  // ─── Galerie Lightbox ───
-  const lightbox     = document.getElementById('lightbox');
-  const lightboxImg  = lightbox ? lightbox.querySelector('.lightbox__img') : null;
+  // ─── Galerie Lightbox mit Pfeilen & Swipe ───
+  const lightbox      = document.getElementById('lightbox');
+  const lightboxImg   = lightbox ? lightbox.querySelector('.lightbox__img') : null;
   const lightboxClose = lightbox ? lightbox.querySelector('.lightbox__close') : null;
+  const lightboxPrev  = lightbox ? lightbox.querySelector('.lightbox__prev') : null;
+  const lightboxNext  = lightbox ? lightbox.querySelector('.lightbox__next') : null;
+  const galleryItems  = Array.from(document.querySelectorAll('.gallery-item[data-src]'));
+  let activeIndex     = 0;
 
-  document.querySelectorAll('.gallery-item[data-src]').forEach(function (item) {
-    item.addEventListener('click', function () {
-      lightboxImg.src = item.dataset.src;
-      lightboxImg.alt = item.querySelector('img').alt;
-      lightbox.classList.add('active');
-      document.body.style.overflow = 'hidden';
-    });
-  });
+  function openLightbox(index) {
+    activeIndex = index;
+    lightboxImg.src = galleryItems[activeIndex].dataset.src;
+    lightboxImg.alt = galleryItems[activeIndex].querySelector('img').alt;
+    lightbox.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
 
   function closeLightbox() {
     if (!lightbox) return;
@@ -89,10 +65,37 @@
     lightboxImg.src = '';
   }
 
-  if (lightboxClose) lightboxClose.addEventListener('click', closeLightbox);
-  if (lightbox) lightbox.addEventListener('click', function (e) {
-    if (e.target === lightbox) closeLightbox();
+  function lightboxGoTo(index) {
+    activeIndex = (index + galleryItems.length) % galleryItems.length;
+    lightboxImg.src = galleryItems[activeIndex].dataset.src;
+    lightboxImg.alt = galleryItems[activeIndex].querySelector('img').alt;
+  }
+
+  galleryItems.forEach(function (item) {
+    item.addEventListener('click', function () {
+      openLightbox(parseInt(item.dataset.index, 10));
+    });
   });
+
+  if (lightboxClose) lightboxClose.addEventListener('click', closeLightbox);
+  if (lightboxPrev)  lightboxPrev.addEventListener('click', function () { lightboxGoTo(activeIndex - 1); });
+  if (lightboxNext)  lightboxNext.addEventListener('click', function () { lightboxGoTo(activeIndex + 1); });
+
+  if (lightbox) {
+    lightbox.addEventListener('click', function (e) {
+      if (e.target === lightbox) closeLightbox();
+    });
+
+    // Swipe in Lightbox
+    let swipeStartX = 0;
+    lightbox.addEventListener('touchstart', function (e) {
+      swipeStartX = e.touches[0].clientX;
+    }, { passive: true });
+    lightbox.addEventListener('touchend', function (e) {
+      const diff = swipeStartX - e.changedTouches[0].clientX;
+      if (Math.abs(diff) > 50) lightboxGoTo(diff > 0 ? activeIndex + 1 : activeIndex - 1);
+    }, { passive: true });
+  }
 
   document.addEventListener('keydown', function (e) {
     if (e.key === 'Escape') { closeNav(); closeLightbox(); }
